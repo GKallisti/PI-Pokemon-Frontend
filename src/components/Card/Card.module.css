@@ -16,8 +16,12 @@
     bottom: 0;
     left: 0;
     right: 0;
-    color: #6807f9;
-font-family: monospace;
+    color: #2f0041;
+    font-family: monospace;
+}
+
+.type h5 {
+    padding: 2px;
 }
 
 .name {
@@ -27,7 +31,7 @@ font-family: monospace;
     bottom: 0;
     left: 0;
     right: 0;
-    color: #6807f9;
+    color: #2f0041;
 
 }
 

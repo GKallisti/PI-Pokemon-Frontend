@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { filterByType, getPokemons, getTypes, orderByName, filterByState } from "../../redux/action";
-import Card from "../Card/Card";//2
-import Paginated from "../Paginated/Paginated";//3
-import SearchBar from "../SearchBar/SearchBar";//1
+import Card from "../Card/Card";
+import Paginated from "../Paginated/Paginated";
+import SearchBar from "../SearchBar/SearchBar";
 import styles from "./Home.module.css";
 import image from "../../assets/loading.gif"
+import logo from "../../assets/Logopokedex.png"
 
 export default function Home(){
     const dispatch = useDispatch();
@@ -28,13 +29,9 @@ export default function Home(){
         setCurrentPage(1);
     };
 
-   
-   
     useEffect(() => {
        rechargePokemon();
     }, []);
-
-
 
     const handleSort = (e) =>{
             e.preventDefault();
@@ -43,9 +40,6 @@ export default function Home(){
             setOrder(e.target.value);
     };
 
-    const filterType = (e) => {
-        dispatch(filterByType(e.target.value))
-    };
 
     const filterState = (e) => {
         dispatch(filterByState(e.target.value));
@@ -55,9 +49,7 @@ export default function Home(){
         <div className={styles.body}>
 
             <div className={styles.nav}>
-                <h2 className={styles.title}>Purple-Ghost Pokedex</h2>
-
-                <button onClick={rechargePokemon} className={styles.button}>Recharge</button>
+            <img src={logo} className={styles.logo} onClick={rechargePokemon} />
 
                 <select onChange={(e) => handleSort(e) } className={styles.button}>
                     <option value= 'none'>Order</option>
@@ -67,12 +59,7 @@ export default function Home(){
                     <option value = 'des'>Z-A</option>
                     </select>
 
-            <select onChange={filterType} className={styles.button}>
-                <option value="all">All types</option>
-                {allTypes.map((t) => (
-                <option key={t.name} value={t.name}>{t.name}</option>
-                ))}
-            </select>
+            
 
             <select onChange={filterState} className={styles.button}>
                 <option value='none'>By state</option>

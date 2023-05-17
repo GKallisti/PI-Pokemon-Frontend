@@ -47,7 +47,7 @@ export default function SearchBar() {
             }}
           />
            <button type="submit" className={styles.placeholder} value={name}>Buscar</button>   
-          {/* <span className={styles.placeholder}>Search</span> */}
+          
         
       </form>
     </div>

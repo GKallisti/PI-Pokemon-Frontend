@@ -117,7 +117,7 @@ export default function PokemonCreate() {
 
                 {error.name && <p>{error.name}</p>}
 
-                <span className={styles.placeholder}>Name</span>
+                <span className={styles.centralize}>Name</span>
               </div>
             </div>
 
@@ -132,7 +132,7 @@ export default function PokemonCreate() {
                   value={input.hp}
                   onChange={handleInputChange}
                 />
-                <span className={styles.placeholder}>Healt Points </span>
+                <span className={styles.placeholder}>Health Points </span>
               </div>
             </div>
 

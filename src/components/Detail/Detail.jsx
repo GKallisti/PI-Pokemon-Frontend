@@ -1,16 +1,25 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
-import { cleanMyStore, cleanStore, getDetail } from "../../redux/action";
+import { cleanMyStore, cleanStore, getDetail, deletePokemon } from "../../redux/action";
 import image  from "../../assets/loading.gif"
 import styles from "./Detail.module.css"
+import DeletedPK from "../DeletedPk/DeletedPK";
 
 export default function Detail(){
     const dispatch = useDispatch();
     const params = useParams();
-
+    const [clean, setClean] = useState(false);
     
+    
+    const handleDelete = () => {
+        dispatch(deletePokemon(pokemonDetail.id));
+        setClean(true);
+      };
+    
+    
+
     useEffect(() => {
         dispatch(getDetail(params.id));
     }, [dispatch, params.id]);
@@ -18,6 +27,7 @@ export default function Detail(){
     const cleanStore = () => {
         dispatch(cleanMyStore())
     };
+
     const pokemonDetail = useSelector((state) => state.pokemonDetail.length && state.pokemonDetail[0]);
 console.log(pokemonDetail.id)
     if(pokemonDetail){
@@ -29,10 +39,11 @@ console.log(pokemonDetail.id)
                 <Link to='/home'>
                     <button className={styles.button} onClick={cleanStore}>Back</button>
                     
-                    {typeof pokemonDetail.id === "number" ?
-                     <h4 className={styles.id}>ID: {pokemonDetail.id}</h4> :
-                    <button >Soltar Pokemon</button>
-}
+                    {typeof pokemonDetail.id === "string" && (
+            <button onClick={handleDelete} className={styles.button}>
+              <p className={styles.text}> delete </p>
+            </button>
+          )}
                 </Link>
             </div>
 
@@ -49,7 +60,7 @@ console.log(pokemonDetail.id)
                     </div>
                  </div>
               
-
+                 {clean && <DeletedPK setClean={setClean} />}
                
                 
             <div className= {styles.detailinfo}>

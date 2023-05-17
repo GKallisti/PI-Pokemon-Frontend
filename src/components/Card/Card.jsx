@@ -11,7 +11,7 @@ export default function Card({ name, images, type, id }){
                 <div className={styles.type}>
                 {   type &&
                     type.map(e => (
-                        <h5 key={e.name}>{e.name}</h5>
+                        <h5 key={e.name}> {e.name}  </h5>
                     ))
                 }
                 </div>

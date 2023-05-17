@@ -4,8 +4,6 @@ export function getPokemons(){
     return async function(dispatch){
     try {
         let response = await axios.get(`http://localhost:3001/pokemons`);
-     
-        console.log(response.data);
         return dispatch({
             type: 'GET_POKEMONS',
             payload: response.data
@@ -32,7 +30,7 @@ export function getNamePokemon(name){
     return async function(dispatch){
         try{
             let response = await axios.get(`http://localhost:3001/pokemons?name=${name}`);
-            let arr= []; //tiene q estar en un array
+            let arr= [];
             arr.push(response.data)
             return dispatch({
                 type: 'GET_BY_NAME',
@@ -103,7 +101,7 @@ export function cleanMyStore(){
 export function deletePokemon(id) {
     return async function (dispatch) {
       try {
-        await axios.delete(`http://localhost:3001/pokemons/${id}`);
+        await axios.delete(`http://localhost:3001/delete/${id}`);
         return dispatch({
           type: 'DELETE_POKEMON',
           payload: id

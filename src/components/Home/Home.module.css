@@ -29,14 +29,14 @@
     grid-gap: 4%;
 }
 
-.title{
-    cursor: pointer;
-    font-family: Helvetica;
-    color: #9c12d3;
-}
 
+.logo{
+width: 20%;
+height: 100%;
+
+}
 .button {
-    background: #9c12d3;
+    background:#2f0041;
     font-family: inherit;
     padding: 0.6em 1.3em;
     font-weight: 900;
@@ -62,11 +62,3 @@ button:hover {
     
 }
 
-/* @media screen and (max-width: 600px){
-    .nav.responsive {
-position:relative
-
-    }
-    (float: right;
-    display: block;)
-} */
