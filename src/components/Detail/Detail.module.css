@@ -1,17 +1,21 @@
 
 .bodyDetail{
-    display: grid; 
-    grid-auto-rows: 1fr; 
-    grid-template-columns: 0.8fr 5.6fr 1fr; 
-    grid-template-rows: 0.2fr 1.3fr 1.5fr; 
-    gap: 0px 0px; 
+  display: grid; 
+  grid-auto-rows: 3em; 
+  grid-template-columns: 25% 50% 25%; 
+  grid-template-rows: 10% 40% 40% 50%; 
+  gap: 0px 0px; 
     grid-template-areas: 
       "nav nav nav"
-      ". cardDetail ."
-      ". detailinfo ."; 
+  "leftside cardDetail rightside"
+  ". detailinfo ."
+  "footer footer footer "; 
+width: 100%;
+height:100%;
+align-self: center ;
+
 }
 .nav{
-   
     width: 100%; 
     height: 5em;
     border-color: black;
@@ -20,13 +24,17 @@
 }
 
 .cardDetail{
-    display: grid; 
+  display: grid; 
+  border: 12px solid green;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
   grid-template-columns: 1fr 1fr; 
-  grid-template-rows: 1fr; 
+  grid-template-rows: 0fr; 
   gap: 0px 0px; 
   grid-template-areas: 
-    "imgdiv infostuff"; 
+    " imgdiv infostuff "; 
   grid-area: cardDetail;
+  height: fit-content;
 }
 
 .imgdiv{
@@ -34,12 +42,12 @@
 }
 
 .imgdiv img {
-    border-radius: 11px;
-    width: 80%;
+    width: 250px;
     height: auto;
     filter: drop-shadow(20px 24px 39px black);
     -webkit-animation: jello-horizontal 1s 1s 2 alternate both;
 	        animation: jello-horizontal 1s 1s 2 alternate both;
+
 }
 .infostuff{
     grid-area: infostuff;
@@ -58,12 +66,36 @@ text-transform: uppercase;
 }
 
 .detailinfo {
-    grid-area: detailinfo;
+  display: grid; 
+  gap: 1px 0px; 
+  grid-area: detailinfo; 
+  border-left: 25px groove lightseagreen;
+  border-right: 25px groove lightseagreen;
+  margin-top: 8px;
 }
 
+.types h3 {
+  align-self: center;
+  margin: 5px
+}
+
+.leftside { grid-area: leftside;
+height: 100%;
+width: auto;
+background: rgb(5,74,13);
+background: linear-gradient(180deg, rgba(5,74,13,1) 0%, rgba(6,247,14,1) 5%, rgba(5,74,13,1) 10%, rgba(6,247,14,1) 15%, rgba(5,74,13,1) 20%, rgba(6,247,14,1) 25%, rgba(5,74,13,1) 30%, rgba(6,247,14,1) 35%, rgba(5,74,13,1) 40%, rgba(6,247,14,1) 45%, rgba(5,74,13,1) 50%, rgba(6,247,14,1) 55%, rgba(5,74,13,1) 60%, rgba(6,247,14,1) 65%, rgba(5,74,13,1) 70%, rgba(6,247,14,1) 75%, rgba(5,74,13,1) 80%, rgba(6,247,14,1) 85%, rgba(5,74,13,1) 90%, rgba(6,247,14,1) 95%);
+}
+.rightside { 
+  grid-area: rightside; 
+  height: 100%;
+  width: auto;
+  background: rgb(5,74,13);
+  background: linear-gradient(180deg, rgba(5,74,13,1) 0%, rgba(6,247,14,1) 5%, rgba(5,74,13,1) 10%, rgba(6,247,14,1) 15%, rgba(5,74,13,1) 20%, rgba(6,247,14,1) 25%, rgba(5,74,13,1) 30%, rgba(6,247,14,1) 35%, rgba(5,74,13,1) 40%, rgba(6,247,14,1) 45%, rgba(5,74,13,1) 50%, rgba(6,247,14,1) 55%, rgba(5,74,13,1) 60%, rgba(6,247,14,1) 65%, rgba(5,74,13,1) 70%, rgba(6,247,14,1) 75%, rgba(5,74,13,1) 80%, rgba(6,247,14,1) 85%, rgba(5,74,13,1) 90%, rgba(6,247,14,1) 95%);
+}
 
 .name{
-   color: #2f0041;
+   color: #b700ff;
+   font-family:   sans-serif;
 }
 .height{
     
@@ -98,12 +130,24 @@ color: black;
 .types{
     display: flex;
     flex-direction: row;
-   
 }
 
 .loadingPokemons{
     width: 25%;
     height: 25%;
+}
+
+.footer{
+ background-image: url(../../assets/footer.jpg);
+ background-position:bottom;
+grid-area: footer;
+}
+
+.footer h1 {
+align-self: center;
+color:azure; 
+background-color:indigo;
+font-weight: bolder;
 }
 
 

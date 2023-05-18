@@ -59,7 +59,6 @@ export default function Home(){
                     <option value = 'des'>Z-A</option>
                     </select>
 
-            
 
             <select onChange={filterState} className={styles.button}>
                 <option value='none'>By state</option>

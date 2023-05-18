@@ -59,7 +59,7 @@ export function getDetail(id){
 export function createPokemon(pokenuevo){
     return async function(dispatch){
         try {
-            var response = await axios.post(`http://localhost:3001/pokemons`, pokenuevo);
+            let response = await axios.post(`http://localhost:3001/pokemons`, pokenuevo);
             return console.log('A Egg Is Hatching')    
         } catch (error) {
             alert('Bad Egg')
