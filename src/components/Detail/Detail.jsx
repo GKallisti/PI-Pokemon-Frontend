@@ -40,7 +40,7 @@ export default function Detail() {
 
                         {typeof pokemonDetail.id === "string" && (
                             <button onClick={handleDelete} className={styles.button}>
-                                <p className={styles.text}> delete </p>
+                                 Delete
                             </button>
                         )}
                     </Link>
@@ -104,7 +104,7 @@ export default function Detail() {
                                             color = "yellowgreen";
                                             break;
                                         case "electric":
-                                            color = "yellow";
+                                            color = "gold";
                                             break;
                                         case "fairy":
                                             color = "violet";

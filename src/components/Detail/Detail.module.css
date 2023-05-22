@@ -1,4 +1,11 @@
-
+@font-face {
+  font-family: 'pokemon';
+  src: local('pokemon'), url(../../assets/PokemonClassic.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'ketchum';
+  src: local('ketchum'), url(../../assets/Ketchum.otf) format('opentype');
+}
 .bodyDetail{
   display: grid; 
   grid-auto-rows: 3em; 
@@ -35,6 +42,8 @@ align-self: center ;
     " imgdiv infostuff "; 
   grid-area: cardDetail;
   height: fit-content;
+  min-height: 330px;
+  min-width: 605px;
 }
 
 .imgdiv{
@@ -71,7 +80,7 @@ text-transform: uppercase;
   grid-area: detailinfo; 
   border-left: 25px groove lightseagreen;
   border-right: 25px groove lightseagreen;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .types h3 {
@@ -94,42 +103,58 @@ background: linear-gradient(180deg, rgba(5,74,13,1) 0%, rgba(6,247,14,1) 5%, rgb
 }
 
 .name{
-   color: #b700ff;
-   font-family:   sans-serif;
+   color:slateblue;
+   font-family: pokemon;
 }
 .height{
-    
-    padding-top: 45px;
+  font-family: pokemon;
+margin: 1.5em;
    
 }
 .weight{
-    padding-top: 45px;
-   
+    font-family: pokemon;
+    margin: 1.5em;
+
 }
 .id{
-    width: 200px;
+    color:black;
+    font-family: pokemon;
+    margin: 1em;
+
   
 }
 .hp{
 color: black;  
+font-family: pokemon;
+
 }
 .attack{
-color:#2f0041;  
+color: black;  
+font-family: pokemon;
+
 }
 .defense{
 color: black;    
+font-family: pokemon;
+
 }
 .speed{
-    color: black;    
+    color: black;  
+    font-family: pokemon;
+  
 
 }
 .type{
-    color: black;    
+    color: black;  
+    font-family: pokemon;
+  
 
 }
 .types{
     display: flex;
     flex-direction: row;
+    font-family: pokemon;
+
 }
 
 .loadingPokemons{
@@ -147,21 +172,25 @@ grid-area: footer;
 align-self: center;
 color:azure; 
 background-color:indigo;
-font-weight: bolder;
+font-family: ketchum;
+font-weight: lighter;
+font-size: 45px
 }
 
 
 .button {
   background:#2f0041;
   font-family: inherit;
-  padding: 0.6em 1.3em;
+  padding: 0.6em 1em;
   font-weight: 900;
   font-size: 18px;
   border: 3px solid black;
   border-radius: 0.4em;
   box-shadow: 0.1em 0.1em;
   color: white;
+  margin-left: 1em;
 }
+
 
 .button:hover {
     transform: translate(-0.05em, -0.05em);

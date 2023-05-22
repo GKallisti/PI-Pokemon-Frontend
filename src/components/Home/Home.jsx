@@ -14,7 +14,7 @@ export default function Home(){
     const allPokemons = useSelector((state) => state.pokemon);
     const allTypes = useSelector((state) => state.types)
     const [currentPage, setCurrentPage] = useState(1);
-    const [pokemonPerPage] = useState(12);
+    const [pokemonPerPage] = useState(20);
     const indexOfLast = currentPage * pokemonPerPage;
     const indexOfFirst = indexOfLast - pokemonPerPage;
     const currentPokemons = allPokemons.slice(indexOfFirst, indexOfLast);
@@ -24,11 +24,12 @@ export default function Home(){
         setCurrentPage(pageNumber);
     };
 
-   const rechargePokemon = () => {
+    const rechargePokemon = () => {
         dispatch(getPokemons());
+        dispatch(getTypes());
         setCurrentPage(1);
-    };
 
+    };
     useEffect(() => {
        rechargePokemon();
     }, []);
@@ -38,6 +39,10 @@ export default function Home(){
             dispatch(orderByName(e.target.value));
             setCurrentPage(1);
             setOrder(e.target.value);
+    };
+    const filterType = (e) => {
+        dispatch(filterByType(e.target.value));
+        setCurrentPage(1);
     };
 
 
@@ -59,12 +64,19 @@ export default function Home(){
                     <option value = 'des'>Z-A</option>
                     </select>
 
+                    <select onChange={filterType} className={styles.button}>
+                <option value="all">All types</option>
+                {allTypes.map((t) => (
+                <option key={t.name} value={t.name}>{t.name}</option>
+                ))}
+            </select>
 
             <select onChange={filterState} className={styles.button}>
                 <option value='none'>By state</option>
                 <option value='true'>Created</option>
                 <option value='false'>Existent</option>
             </select>
+
 
             <Link to='/pokemon'><button className={styles.button}>Create Pokemon</button></Link>
 
