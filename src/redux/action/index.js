@@ -9,7 +9,7 @@ export function getPokemons(){
             payload: response.data
         });
     } catch (error) {
-        alert('No pude traer pokemons')
+        alert('We ran out of Pokeballs!')
     }
      
     };
@@ -60,7 +60,7 @@ export function createPokemon(pokenuevo){
     return async function(dispatch){
         try {
             let response = await axios.post(`http://localhost:3001/pokemons`, pokenuevo);
-            return console.log('A Egg Is Hatching')    
+            return alert('A Egg Is Hatching')    
         } catch (error) {
             alert('Bad Egg')
         }
@@ -69,7 +69,24 @@ export function createPokemon(pokenuevo){
 };
 
 
-export function orderByName(payload){
+export function deletePokemon(id) {
+    return async function (dispatch) {
+      try {
+        await axios.delete(`http://localhost:3001/delete/${id}`);
+        return dispatch({
+          type: 'DELETE_POKEMON',
+          payload: id
+        });
+      } catch (error) {
+        return dispatch({
+            type: 'DELETE_POKEMON',
+            payload: error.message
+        });
+      }
+    };
+  }
+
+  export function orderByName(payload){
     return{
         type: 'ORDER_POKEMONS',
         payload
@@ -91,26 +108,15 @@ export function filterByState(payload){
 };
 
 
+export function setPage(){
+    return{
+        type: 'SET_PAGE',
+    }
+}
+
+
 export function cleanMyStore(){
     return{
         type: 'CLEAN_STORE',
     }
 }
-
-
-export function deletePokemon(id) {
-    return async function (dispatch) {
-      try {
-        await axios.delete(`http://localhost:3001/delete/${id}`);
-        return dispatch({
-          type: 'DELETE_POKEMON',
-          payload: id
-        });
-      } catch (error) {
-        return dispatch({
-          type: 'DELETE_POKEMON_ERROR',
-          payload: error.message
-        });
-      }
-    };
-  }

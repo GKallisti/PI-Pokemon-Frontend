@@ -20,8 +20,9 @@
     font-family: monospace;
 }
 
-.type h5 {
+.type h4 {
     padding: 2px;
+    margin-left: 4px;
 }
 
 .name {
@@ -40,8 +41,8 @@
   width: 190px;
   height: 254px;
   background: #fff;
-  border: solid 4px #333;
-  box-shadow: -5px 5px #333;
+  border: double 6px #333;
+  box-shadow: -5px 5px purple;
   display: flex;
   justify-content: center;
   cursor: pointer;
@@ -50,7 +51,7 @@
 .card:hover {
     opacity: 1;
     transition: opacity .3s 1s ease-in-out;
-   scale: 1.05;
+    scale: 1.05;
     box-shadow: 0px 0px #333;
 }
 

@@ -23,15 +23,15 @@ div.centralize {
 
 
 .centralize button {
-    background: #2f0041;
+    background: #ffffff;
     font-family: inherit;
-    padding: 0.6em 1em;
+    padding: 0.3em 1em;
     font-weight: 900;
-    font-size: 12px;
-    border: 3px solid black;
+    font-size: 15px;
+    border: 5px double black;
     border-radius: 0.4em;
-    box-shadow: 0.1em 0.1em;
-    color: #fff;
+    box-shadow: 0.3em 0.5em purple;
+    color: #000000;
 }
 
 .centralize button:hover {

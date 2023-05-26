@@ -14,7 +14,7 @@ export default function Home(){
     const allPokemons = useSelector((state) => state.pokemon);
     const allTypes = useSelector((state) => state.types)
     const [currentPage, setCurrentPage] = useState(1);
-    const [pokemonPerPage] = useState(20);
+    const [pokemonPerPage] = useState(18);
     const indexOfLast = currentPage * pokemonPerPage;
     const indexOfFirst = indexOfLast - pokemonPerPage;
     const currentPokemons = allPokemons.slice(indexOfFirst, indexOfLast);
@@ -50,8 +50,9 @@ export default function Home(){
         dispatch(filterByState(e.target.value));
     };
 
+
     return (
-        <div className={styles.body}>
+        <div className={styles.body} >
 
             <div className={styles.nav}>
             <img src={logo} className={styles.logo} onClick={rechargePokemon} />
@@ -81,7 +82,6 @@ export default function Home(){
             <Link to='/pokemon'><button className={styles.button}>Create Pokemon</button></Link>
 
             <SearchBar />
-
             </div>
         <div className={styles.cards}>
             {   currentPokemons?.map((e) => {
@@ -100,6 +100,7 @@ export default function Home(){
             pokemonPerPage={pokemonPerPage}
             allPokemons={allPokemons.length}
             paginated={paginated}
+            currentPage={currentPage}
             />
         </div>
     );

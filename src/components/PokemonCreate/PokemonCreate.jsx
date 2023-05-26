@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import { validate } from "./validator.js";
 import { createPokemon, getTypes } from "../../redux/action";
 import styles from "./PokemonCreate.module.css";
-
+import img from '../../assets/pokegg.gif'
 
 
 export default function PokemonCreate() {
   const dispatch = useDispatch();
-  const typesData = useSelector((state) => state.types); // traer cosas del reducer
+  const typesData = useSelector((state) => state.types); 
   const [types, setTypes] = useState([]);
   const [error, setError] = useState({
     name: "",
@@ -21,7 +21,7 @@ export default function PokemonCreate() {
     weight: "",
     image: "",
     types: [],
-  }); //objeto igual a input
+  }); 
   const [input, setInput] = useState({
     name: "",
     hp: "",
@@ -98,10 +98,12 @@ export default function PokemonCreate() {
             <button className={styles.button}>Back</button>
           </Link>
         </div>
-
+<div>
+      <img src={img} className={styles.img} alt="pokegg" ></img>
+</div>
         <div className={styles.statsAndTypes}>
           <div className={styles.stats}>
-            <h3>Stats</h3>
+            <h2>Stats</h2>
 
             <div className={styles.centralize}>
               <div className={styles.inputBlock}>
@@ -117,7 +119,7 @@ export default function PokemonCreate() {
 
                 {error.name && <p>{error.name}</p>}
 
-                <span className={styles.centralize}>Name</span>
+                <span className={styles.placeholder}> Name</span>
               </div>
             </div>
 
@@ -229,7 +231,7 @@ export default function PokemonCreate() {
           </div>
 
           <div className={styles.types}>
-            <h3>Types</h3>
+            <h2>Types</h2>
             <div className={styles.typesOrder}>
               {typesData.map((e) => (
                 <div className={styles.container}>

@@ -3,6 +3,7 @@ const initialState = {
   pokemonFiltered: [],
   pokemonDetail: [],
   types: [],
+  currentPage:1,
 };
 
 function rootReducer(state = initialState, action) {

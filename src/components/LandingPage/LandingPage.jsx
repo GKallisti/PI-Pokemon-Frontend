@@ -21,11 +21,11 @@ navigate('/home')
   return (
     <div className={styles.Landing}>
       <img src={pokemonImage} alt="imagen" className={styles.Image} />
-      {/* <Link to="/home">      */}
+     
         <button className={styles.button} onClick={toHome}> Start Pokedex Purple-Ghost 
     
 </button>
-      {/* </Link> */}
+      
     </div>
   );
 }

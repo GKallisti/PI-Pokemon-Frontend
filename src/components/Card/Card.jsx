@@ -63,9 +63,9 @@ export default function Card({ name, images, type, id }){
       }
 
       return (
-        <h5 key={e.name} style={{ color: color }}>
+        <h4 key={e.name} style={{ color: color }}>
           {e.name}
-        </h5>
+        </h4>
       );
     })}
 </div>

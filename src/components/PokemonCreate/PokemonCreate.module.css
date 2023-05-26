@@ -1,8 +1,22 @@
+@font-face {
+    font-family: 'pokemon';
+    src: local('pokemon'), url(../../assets/PokemonClassic.ttf) format('truetype');
+  }
+
 .nav{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+}
+.nav h1{
+font-family: pokemon;
+margin-left: 1em;
+}
+
+.img {
+    width: 15%;
+    height: 15%;
 }
 
 .statsAndTypes{
@@ -14,40 +28,48 @@
 
 }
 
+
 .stats{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 40%;
-    width: 20%;
-    background-color: #2f0041;
+    height: 50%;
+    width: 30%;
+    background-color: #ffffff;
+    padding-bottom: 2em;
+    border: 15px double black;
+    margin-top: 1em;
     border-radius: 10px;
-    padding-bottom: 2%;
-    
+
 }
 
 
 .stats h3{
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .typesOrder{
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    width: 25em;
+    justify-content: space-between;
+
    
 }
 
 /* Buttons */
 .button {
-    background:#2f0041;
+
+    background:#ffffff;
     font-family: inherit;
     padding: 0.6em 1.3em;
     font-weight: 900;
     font-size: 18px;
-    border: 3px solid black;
+    border: 5px double black;
     border-radius: 0.4em;
-    box-shadow: 0.1em 0.1em;
-    color: white;
+    box-shadow: 0.3em 0.5em purple;
+    color: #000000;
   }
   
   .button:hover {
@@ -65,48 +87,59 @@
 .centralize {
     display: flex;
 	margin: 0.5em;
+    color: black;
+
 }
 .inputBlock {
-	position: relative;
     display: grid;
+    align-items: center;
+
 }
 .inputBlock input {
-	font-weight: 500;
-	
+	font-weight: 900;
+    align-items: center;
+    width: 20em;
+
 }
 .inputBlock span {
     margin: 5px 1;
-    color: white;
+    color: rgb(0, 0, 0);
     align-items: center;
-
+    font-weight: bold;
+    font-size: 1.5em;
 }
 
 /* Types buttons */
 
 .container {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 13px;
+    font-size: 16px;
+    
 }
 .types{
     height: 100%;
-    background-color: #2f0041;
+    background-color: #ffffff;
     border-radius: 10px;
-    margin-left: -15%;
     padding-right: 4%;
     padding-left: 4%;
     padding-bottom: 4%;
     padding-top: 1%;
+    margin-top: 1em;
+    border: 15px double black;
 }
 
 .types h3 {
-color: white;
+color: rgb(0, 0, 0);
 }
 ul{
     margin-block-start: 20px;
    
 }
-ul.ksCboxtags li{
+.ksCboxtags li{
     display: inline;
+    border: 5px solid purple;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 ul.ksCboxtags li label{
     background-color: rgba(255, 255, 255, .9);
@@ -126,20 +159,13 @@ ul.ksCboxtags li label {
     padding: 8px 12px;
     cursor: pointer;
 }
-ul.ksCboxtags li label::before {
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 900;
-    font-size: 12px;
-    padding: 2px 6px 2px 2px;
-    transition: transform .3s ease-in-out;
-}
+
 ul.ksCboxtags li input[type="checkbox"]:checked + label::before {
     transform: rotate(-360deg);
     transition: transform .3s ease-in-out;
 }
 ul.ksCboxtags li input[type="checkbox"]:checked + label {
-    border: 2px solid #8c00b3;
+    border: 5px solid #000000;
    
 }
 ul.ksCboxtags li input[type="checkbox"] {

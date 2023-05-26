@@ -9,14 +9,18 @@
     height: fit-content;
 }
 
+
 .nav{
+
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100%;
+    width: 90%;
     justify-content: space-around;
-    border-color: black;
-    border: 5px;
+    border: 12px double black;
+    padding: 10px;
+
+
 }
 
 .cards{
@@ -24,7 +28,8 @@
     gap: 1.5rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
 }
 
 
@@ -34,15 +39,15 @@ height: 100%;
 
 }
 .button {
-    background:#2f0041;
+    background:#ffffff;
     font-family: inherit;
     padding: 0.6em 1.3em;
     font-weight: 900;
     font-size: 18px;
-    border: 3px solid black;
+    border: 5px double black;
     border-radius: 0.4em;
-    box-shadow: 0.1em 0.1em;
-    color: #fff;
+    box-shadow: 0.3em 0.5em purple;
+    color: #000000;
 }
 
 button:hover {
